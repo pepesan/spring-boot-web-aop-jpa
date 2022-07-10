@@ -1,5 +1,6 @@
-package com.example.demoaop.demowebaop.controllers;
+package com.cursosdedesarrollo.aop.controllers;
 
+import com.cursosdedesarrollo.aop.domain.Customer;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Controller;
@@ -21,4 +22,5 @@ public class HelloController {
     public ModelAndView greeting(@RequestParam(name="name", required=false, defaultValue="World") String name) {
         return new ModelAndView("saludo","name", name);
     }
+
 }

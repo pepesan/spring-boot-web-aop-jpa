@@ -1,4 +1,4 @@
-package com.example.demoaop.demowebaop.domain;
+package com.cursosdedesarrollo.aop.domain;
 
 import lombok.Data;
 
@@ -17,7 +17,12 @@ public class Customer {
     private String firstName;
     private String lastName;
 
-    protected Customer() {}
+    public Customer() {
+        this.id = 0L;
+        this.firstName = "";
+        this.lastName = "";
+
+    }
 
     public Customer(String firstName, String lastName) {
         this.firstName = firstName;
