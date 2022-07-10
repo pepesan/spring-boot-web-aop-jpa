@@ -1,5 +1,6 @@
 package com.cursosdedesarrollo.aop.controllers;
 
+import com.cursosdedesarrollo.aop.advices.ResourceNotFoundException;
 import com.cursosdedesarrollo.aop.domain.Customer;
 import com.cursosdedesarrollo.aop.repositories.CustomerRepository;
 import com.cursosdedesarrollo.aop.services.CustomerService;
@@ -36,4 +37,11 @@ public class RestCrudController {
 
 
     }
+    @GetMapping("/customer/advice")
+    public Customer getResourceNotFoundException() throws ResourceNotFoundException {
+        return this.customerService.getById(0L).orElseThrow(() -> new ResourceNotFoundException("Not found Customer with id = " + 0L));
+
+
+    }
+
 }
